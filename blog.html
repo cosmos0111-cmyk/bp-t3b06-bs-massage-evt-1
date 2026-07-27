@@ -1,381 +1,65 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-acid-yellow">
-    <title>발산 마사지 이벤트 | 형님들 여기로</title>
-    <meta name="description" content="발산 마사지 이벤트! 지금 예약하면 50% 할인. 강력한 마사지로 피로를 풀어드립니다. 형님들 여기로 오세요. 010-6279-0862">
-    <meta name="keywords" content="발산 마사지, 발산 마사지 이벤트, 마사지 할인, 발산 스웨디시, 발산 관리">
-    <link rel="canonical" href="https://t3b06-bs-massage-evt-1.vercel.app/">
-    <meta property="og:title" content="발산 마사지 이벤트 - 형님들 여기로">
-    <meta property="og:description" content="발산 마사지 이벤트! 지금 예약하면 50% 할인. 강력한 마사지로 피로를 풀어드립니다. 010-6279-0862">
-    <meta property="og:url" content="https://t3b06-bs-massage-evt-1.vercel.app/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="발산 마사지 이벤트">
-    <meta name="twitter:description" content="발산 마사지 이벤트! 지금 예약하면 50% 할인. 형님들 여기로 오세요.">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "발산 마사지 이벤트",
-        "telephone": "010-6279-0862",
-        "url": "https://t3b06-bs-massage-evt-1.vercel.app/",
-        "description": "발산 마사지 이벤트 - 최고의 가성비 마사지, 형님들 여기로 오세요",
-        "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect width='1200' height='630' fill='%23111'/%3E%3Ctext x='50%25' y='50%25' font-size='60' fill='%23ffff00' text-anchor='middle' dy='.3em'%3EMASSAGE%3C/text%3E%3C/svg%3E",
-        "areaServed": "발산",
-        "priceRange": "₩₩"
-    }
-    </script>
-    <style>
-        /* RESET */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Courier New', Courier, 'Impact', monospace;
-            background: #111;
-            color: #ffff00;
-            line-height: 1.2;
-            font-size: 18px;
-            padding: 0 24px;
-            max-width: none;
-        }
-        img { display: block; max-width: 100%; }
-
-        /* TEXTURE 배경 (거친 그라데이션 패턴) */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: 
-                repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(255,255,0,0.03) 8px, rgba(255,255,0,0.03) 16px),
-                repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(0,255,65,0.03) 8px, rgba(0,255,65,0.03) 16px);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* TYPOGRAPHY */
-        h1, h2, h3, h4 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
-        h1 { font-size: clamp(2.8rem, 10vw, 5rem); color: #ffff00; text-shadow: 4px 4px 0 #00ff41; }
-        h2 { font-size: clamp(2rem, 6vw, 3.2rem); border-left: 8px solid #00ff41; padding-left: 16px; margin-bottom: 24px; }
-        h3 { font-size: 1.6rem; }
-        p { margin-bottom: 1em; max-width: 70ch; }
-        a { color: #00ff41; text-decoration: underline 4px; text-underline-offset: 6px; transition: 0.1s; }
-        a:hover { color: #ffff00; background: #111; text-decoration-color: #ffff00; }
-
-        /* HEADER */
-        header {
-            padding: 24px 0 16px;
-            border-bottom: 4px solid #ffff00;
-            margin-bottom: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-        }
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-            letter-spacing: -0.05em;
-            color: #00ff41;
-            background: #111;
-            padding: 4px 12px;
-            border: 4px solid #ffff00;
-            transform: rotate(-1deg);
-            display: inline-block;
-        }
-        .logo span { color: #ffff00; }
-
-        /* NAV */
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 24px;
-        }
-        nav a {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #ffff00;
-            text-decoration: none;
-            border: 3px solid transparent;
-            padding: 8px 12px;
-            transition: 0.15s;
-        }
-        nav a:hover {
-            border-color: #00ff41;
-            background: #222;
-        }
-
-        /* 햄버거 버튼 (모바일) */
-        #menu-toggle { display: none; }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            padding: 8px;
-            border: 3px solid #ffff00;
-            background: #111;
-        }
-        .hamburger span {
-            display: block;
-            width: 30px;
-            height: 4px;
-            background: #ffff00;
-            transition: 0.2s;
-        }
-        #menu-toggle:checked + .hamburger span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
-        #menu-toggle:checked + .hamburger span:nth-child(2) { opacity: 0; }
-        #menu-toggle:checked + .hamburger span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
-
-        /* HERO */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            padding: 40px 0;
-            margin: 0 -24px 40px;
-            padding-left: 24px;
-            padding-right: 24px;
-            background: 
-                linear-gradient(135deg, #111 0%, #1a1a00 50%, #111 100%),
-                repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0,255,65,0.08) 20px, rgba(0,255,65,0.08) 21px);
-            border-top: 4px solid #00ff41;
-            border-bottom: 4px solid #00ff41;
-            transform: skewY(-1deg);
-        }
-        .hero > * { transform: skewY(1deg); }
-        .hero-content {
-            flex: 1 1 50%;
-            min-width: 280px;
-        }
-        .hero-content .subhead {
-            font-size: 1.4rem;
-            color: #00ff41;
-            margin-bottom: 8px;
-            display: block;
-        }
-        .hero-content .cta {
-            display: inline-block;
-            margin-top: 24px;
-            padding: 16px 32px;
-            background: #ffff00;
-            color: #111;
-            font-weight: 900;
-            font-size: 1.6rem;
-            text-decoration: none;
-            border: 4px solid #111;
-            box-shadow: 8px 8px 0 #00ff41;
-            transition: 0.1s;
-        }
-        .hero-content .cta:hover {
-            background: #00ff41;
-            color: #111;
-            box-shadow: 4px 4px 0 #ffff00;
-        }
-        .hero-visual {
-            flex: 0 0 300px;
-            height: 300px;
-            background: 
-                radial-gradient(circle at 30% 40%, #ffff00 10%, transparent 10%),
-                radial-gradient(circle at 70% 60%, #00ff41 15%, transparent 15%),
-                repeating-linear-gradient(0deg, #111, #111 12px, #ffff00 12px, #ffff00 14px);
-            border: 4px solid #ffff00;
-            transform: rotate(2deg);
-        }
-
-        /* MAIN & SECTION */
-        main {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        section {
-            padding: 40px 0;
-            margin-bottom: 40px;
-            border-top: 4px solid #00ff41;
-            border-bottom: 4px solid #00ff41;
-        }
-        .section-inner {
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            align-items: flex-start;
-        }
-
-        /* BENEFITS (블로그 정보성 글) */
-        .blog-article {
-            background: #1a1a1a;
-            padding: 24px;
-            border: 4px solid #ffff00;
-            flex: 1 1 100%;
-        }
-        .blog-article h2 {
-            font-size: 2.4rem;
-            border-left: 8px solid #00ff41;
-            padding-left: 16px;
-            margin-bottom: 24px;
-        }
-        .blog-article p {
-            color: #ddd;
-            margin-bottom: 1.2em;
-            font-size: 1.1rem;
-            line-height: 1.5;
-        }
-        .blog-article .highlight {
-            color: #ffff00;
-            font-weight: 700;
-            background: #111;
-            padding: 2px 8px;
-        }
-
-        /* REVIEW CARDS */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
-            width: 100%;
-        }
-        .review-card {
-            background: #111;
-            border: 4px solid #ffff00;
-            padding: 20px;
-            transform: rotate(0.5deg);
-            position: relative;
-        }
-        .review-card:nth-child(2n) { transform: rotate(-0.8deg); border-color: #00ff41; }
-        .review-card .nick {
-            font-weight: 900;
-            font-size: 1.3rem;
-            color: #00ff41;
-        }
-        .review-card .date {
-            font-size: 0.85rem;
-            color: #888;
-            margin-top: 4px;
-        }
-        .review-card .stars {
-            color: #ffff00;
-            font-size: 1.4rem;
-            letter-spacing: 4px;
-            margin: 8px 0;
-        }
-        .review-card .text {
-            color: #ccc;
-            font-size: 1rem;
-            border-left: 4px solid #00ff41;
-            padding-left: 12px;
-            margin-top: 12px;
-        }
-
-        /* FOOTER */
-        footer {
-            padding: 40px 0 24px;
-            border-top: 4px solid #ffff00;
-            margin-top: 40px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-        }
-        footer .copyright {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        footer .phone {
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: #00ff41;
-            border: 4px solid #00ff41;
-            padding: 8px 16px;
-            text-decoration: none;
-        }
-        footer .phone:hover {
-            background: #00ff41;
-            color: #111;
-        }
-
-        /* 반응형 (모바일) */
-        @media (max-width: 768px) {
-            body { padding: 0 16px; }
-            .hamburger { display: flex; }
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: #111;
-                border: 4px solid #ffff00;
-                padding: 24px;
-                z-index: 100;
-                gap: 16px;
-            }
-            #menu-toggle:checked ~ ul { display: flex; }
-
-            .hero {
-                flex-direction: column;
-                padding: 24px 16px;
-                margin-left: -16px;
-                margin-right: -16px;
-            }
-            .hero-visual {
-                flex-basis: 200px;
-                height: 200px;
-                width: 100%;
-                margin-top: 24px;
-            }
-            h1 { font-size: clamp(2.2rem, 12vw, 3.5rem); }
-            h2 { font-size: 1.8rem; }
-            .reviews-grid { grid-template-columns: 1fr; }
-            .blog-article h2 { font-size: 1.8rem; }
-            footer { flex-direction: column; text-align: center; }
-        }
-    </style>
+<meta charset="UTF-8">
+<title>발산 마사지 이벤트 블로그 - 현장 운영 가이드</title>
+<meta name="description" content="발산 마사지 이벤트를 진행하는 현장 담당자를 위한 블로그 포스트. 실무 체크리스트와 현장 운영 팁을 전문적인 시각으로 전달합니다.">
+<meta name="keywords" content="발산 마사지, 마사지 이벤트, 현장 운영, 체크리스트, 블로그">
+<link rel="canonical" href="https://balsan-body-care.namanavi.com/blog.html">
+<meta property="og:title" content="발산 마사지 이벤트 블로그">
+<meta property="og:description" content="발산 마사지 이벤트 현장 운영을 위한 심층 가이드와 실전 팁을 제공합니다.">
+<meta property="og:url" content="https://balsan-body-care.namanavi.com/blog.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
+<body class="m-main-jszs">
 <header>
-    <div class="logo"><span>발산</span> 마사지</div>
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="hamburger">
-        <span></span><span></span><span></span>
-    </label>
-    <nav>
-        <ul>
-            <li><a href="#hero">홈</a></li>
-            <li><a href="#blog">이벤트</a></li>
-            <li><a href="#reviews">후기</a></li>
-            <li><a href="tel:010-6279-0862">전화</a></li>
-        </ul>
-    </nav>
+<nav>
+<a href="/">홈</a>
+<a href="/checklist">체크리스트</a>
+<a href="/blog">블로그</a>
+<a href="/contact">연락처</a>
+</nav>
 </header>
+<main class="main-content">
+<h1>발산 마사지 이벤트 현장 운영, 지금 당장 점검하라</h1>
 
-<main>
-    <!-- HERO -->
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <span class="subhead">🔥 형님들 여기로 🔥</span>
-            <h1>발산 마사지<br><span style="color:#00ff41;">50% 파격 할인</span></h1>
-            <p style="font-size:1.2rem; margin-top:16px;">
-                지금 예약하면 1회 50% 할인. <strong style="color:#ffff00;">최고의 마사지</strong>로 몸과 마음이 가볍다.
-            </p>
-            <a href="tel:010-6279-0862" class="cta">📞 지금 전화</a>
-        </div>
-        <div class="hero-visual" role="img" aria-label="마사지 이미지"></div>
-    </section>
+<section>
+<h2>1. 사전 준비 단계 – 목표와 인원을 정확히 정의하라</h2>
+<p>이벤트를 성공으로 이끄는 첫 관문은 ‘왜’를 명확히 하는 일이다. 발산 마사지 이벤트가 추구하는 핵심 목표—브랜드 인지도 상승, 신규 고객 확보, 혹은 매출 증대—를 문서화하고, 이를 달성하기 위한 KPI를 설정한다. 목표가 명확하면 필요한 인원 규모, 장비 수량, 그리고 운영 시간표를 객관적으로 산출할 수 있다.</p>
+<p>인원 산정 시 고려해야 할 변수는 크게 네 가지다. 첫째, 예상 방문자 수. 과거 데이터가 없을 경우 인근 유사 이벤트 평균 방문자를 기준으로 1.2배 보정한다. 둘째, 서비스 제공 시간당 최대 처리량. 마사지 한 회당 평균 45분을 기준으로 세션당 담당자 1명을 배정한다. 셋째, 휴식 및 교대 인원. 연속 근무 4시간 이상 시 최소 15%의 교대 인원을 확보한다. 넷째, 비상 상황 대비 인원—예상치 못한 인원 변동에 대비해 10% 여분 인력을 미리 배정한다.</p>
+</section>
 
-    <!-- 블로그 정보성 글 -->
-    <section id="blog">
-        <div class="section-inner">
-            <article class="blog-article">
-                <h2>💪 발산 마사지 이벤트 — 형님들 챙깁니다</h2>
-                <p>
-                    <span class="highlight">30분 마사지 50% 할인</
+<section>
+<h2>2. 현장 레이아웃 설계 – 흐름을 부수고 효율을 높여라</h2>
+<p>브루탈리즘 감성을 살리면서도 작업 효율을 극대화하려면 동선 설계가 핵심이다. 입구에서 대기 공간, 서비스 구역, 정산 구역까지 일직선 흐름을 만든다. 대기 공간은 최소 2m 간격을 유지해 개인 프라이버시를 보장하되, 시각적으로는 콘크리트 질감과 대담한 색상 블록을 배치해 눈길을 끈다.</p>
+<p>서비스 구역은 최소 1.5m 간격을 확보하고, 각 마사지 테이블마다 전용 전원 콘센트와 조명 스위치를 설치한다. 정산 구역은 현장 마감 직후 바로 이동할 수 있도록 출입구와 인접하게 배치한다. 이때 QR 코드 결제 시스템을 설치하면 인원 변동에 즉각 대응할 수 있다.</p>
+</section>
+
+<section>
+<h2>3. 인원 관리 – 실시간 변동에 즉각 대응하라</h2>
+<p>현장에서는 인원이 급격히 변동될 때마다 즉시 대처해야 한다. 이를 위해 ‘인원 변동 시트’를 사전 작성하고, 담당자마다 실시간 업데이트 수단(예: 메신저 그룹)을 지정한다. 변동이 발생하면 시트에 기록하고, 교대 인원을 호출하거나 예약을 재조정한다.</p>
+<p>특히 고정 일정이 없는 프리랜서 마사지사와의 협업 시, 사전 계약서에 ‘변동 알림 30분 전’ 조항을 삽입한다. 이렇게 하면 인원 부족 상황이 발생했을 때 즉시 대체 인원을 투입할 수 있다.</p>
+</section>
+
+<section>
+<h2>4. 마무리 정산 – 투명성과 속도를 동시에 확보</h2>
+<p>이벤트 종료 직후 정산 단계에서 가장 많이 발생하는 문제는 ‘누가 얼마를 받았는가’에 대한 불명확성이다. 이를 방지하려면 각 서비스 완료 시점마다 자동으로 매출을 기록하는 시스템을 구축한다. QR 결제와 연동된 스프레드시트를 활용하면 실시간 매출 현황을 파악할 수 있다.</p>
+<p>정산 단계에서는 인력 비용, 장비 임대료, 광고 비용을 각각 구분해 항목별로 청구하고, 최종 정산표를 모든 담당자에게 투명하게 공유한다. 또한, 정산 결과를 PDF로 저장해 추후 감사 자료로 활용한다.</p>
+</section>
+
+<section>
+<h2>5. FAQ – 현장에서 흔히 묻는 질문 정리</h2>
+<p><strong>Q1. 인원 변동이 20% 이상 발생하면 어떻게 해야 하나요?</strong></p>
+<p>변동이 20%를 초과하면 즉시 교대 인원을 호출하고, 남은 인원에 맞춰 예약을 재조정한다. 동시에, 현장 담당자는 메신저 그룹에 ‘긴급 인원 변동’ 알림을 전송한다.</p>
+<p><strong>Q2. 정산 오류가 발생했을 때 가장 빠른 해결 방법은?</strong></p>
+<p>정산 오류는 매출 기록 시점과 실제 결제 내역을 대조하는 것이 첫 번째 단계다. 차이가 발견되면 해당 결제 영수증을 재검증하고, 오류가 확인되면 즉시 수정 후 전체 정산표를 재발행한다.</p>
+</section>
+</main>
+<footer class="n-foot-kcpm">
+<p>© 2026 발산 바디 케어. 모든 권리 보유.</p>
+</footer>
 </body>
 </html>
