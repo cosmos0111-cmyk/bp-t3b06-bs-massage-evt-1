@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t3b06-bs-massage-evt-1</title>
+  <meta name="description" content="t3b06-bs-massage-evt-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://balsan-body-care.namanavi.com/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* CSS 핵심 재사용 (디자인 시스템 완전 동일) */
+ *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+ html { font-size:16px; scroll-behavior:smooth; }
+ body { 
+ font-family:'Courier New', Courier, monospace; 
+ background:#1a1a1a; 
+ color:#e0e0e0; 
+ min-height:100vh; 
+ position:relative; 
+ overflow-x:hidden; 
+ }
+ body::before {
+ content:'';
+ position:fixed;
+ top:0; left:0; width:100%; height:100%;
+ background: repeating-linear-gradient(
+ 0deg,
+ transparent,
+ transparent 2px,
+ rgba(255,255,255,0.02) 2px,
+ rgba(255,255,255,0.02) 4px
+ ),
+ repeating-linear-gradient(
+ 90deg,
+ transparent,
+ transparent 2px,
+ rgba(255,255,255,0.02) 2px,
+ rgba(255,255,255,0.02) 4px
+ );
+ pointer-events:none;
+ z-index:0;
+ }
+ h1, h2, h3, h4 { font-weight:900; text-transform:uppercase; letter-spacing:-0.05em; }
+ h1 { font-size:3rem; line-height:1; color:#f7e05e; text-shadow:4px 4px 0 #000; margin-bottom:1rem; }
+ h2 { font-size:2rem; color:#f7e05e; border-left:6px solid #f7e05e; padding-left:1rem; margin:2rem 0 1rem; }
+ h3 { font-size:1.5rem; color:#fff; margin-bottom:0.5rem; }
+ p { font-size:1.1rem; line-height:1.6; margin-bottom:1rem; }
+ a { color:#f7e05e; text-decoration:none; border-bottom:2px solid transparent; transition:0.2s; }
+ a:hover { border-bottom-color:#f7e05e; background:rgba(247,224,94,0.1); }
+
+ header {
+ background:#111;
+ border-bottom:4px solid #f7e05e;
+ padding:1rem 2rem;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ position:sticky;
+ top:0;
+ z-index:10;
+ }
+ .logo {
+ font-size:1.8rem;
+ font-weight:900;
+ color:#f7e05e;
+ text-shadow:3px 3px 0 #000;
+ }
+ .logo span { color:#fff; }
+ nav {
+ display:flex;
+ gap:2rem;
+ align-items:center;
+ }
+ nav a {
+ font-size:1rem;
+ font-weight:bold;
+ text-transform:uppercase;
+ color:#fff;
+ padding:0.5rem 1rem;
+ border:2px solid transparent;
+ transition:0.3s;
+ }
+ nav a:hover {
+ border-color:#f7e05e;
+ color:#f7e05e;
+ }
+ .tel-link {
+ background:#f7e05e;
+ color:#000 !important;
+ padding:0.5rem 1.5rem;
+ font-weight:900;
+ border:none !important;
+ }
+ .tel-link:hover {
+ background:#fff;
+ color:#000 !important;
+ }
+
+ .hamburger-menu { display:none; }
+
+ @media (max-width:768px) {
+ header { flex-wrap:wrap; padding:1rem; }
+ nav {
+ display:none;
+ width:100%;
+ flex-direction:column;
+ gap:0.5rem;
+ padding-top:1rem;
+ }
+ nav.active { display:flex; }
+ .hamburger-menu {
+ display:block;
+ font-size:2rem;
+ color:#f7e05e;
+ background:none;
+ border:none;
+ cursor:pointer;
+ }
+ h1 { font-size:2rem; }
+ h2 { font-size:1.5rem; }
+ }
+
+ .container { max-width:1200px; margin:0 auto; padding:2rem; position:relative; z-index:1; }
+
+ .hero {
+ background:#222;
+ border:4px solid #f7e05e;
+ padding:3rem 2rem;
+ margin-bottom:2rem;
+ text-align:center;
+ }
+ .hero h1 { font-size:3.5rem; }
+ .hero p { font-size:1.3rem; max-width:700px; margin:0 auto; }
+
+ .card {
+ background:#1e1e1e;
+ border:2px solid #333;
+ padding:1.5rem;
+ margin-bottom:1.5rem;
+ transition:0.2s;
+ }
+ .card:hover { border-color:#f7e05e; transform:translateX(4px); }
+
+ .grid-2 {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:1.5rem;
+ }
+ @media (max-width:768px) { .grid-2 { grid-template-columns:1fr; } }
+
+ .faq-item {
+ border-bottom:1px solid #333;
+ padding:1rem 0;
+ }
+ .faq-item h3 { 
+ cursor:pointer; 
+ display:flex; 
+ justify-content:space-between; 
+ align-items:center;
+ }
+ .faq-item h3::after { content:'+'; font-size:1.5rem; }
+ .faq-item.active h3::after { content:'–'; }
+ .faq-item p { display:none; margin-top:0.5rem; }
+ .faq-item.active p { display:block; }
+
+ .cta-button {
+ display:inline-block;
+ background:#f7e05e;
+ color:#000;
+ padding:1rem 3rem;
+ font-weight:900;
+ font-size:1.3rem;
+ text-transform:uppercase;
+ border:4px solid #000;
+ transition:0.2s;
+ margin-top:1rem;
+ }
+ .cta-button:hover {
+ background:#fff;
+ border-color:#f7e05e;
+ transform:scale(1.02);
+ }
+
+ img { max-width:100%; height:auto; display:block; }
+ .texture-bg { /* placeholder for any texture images */ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t3b06-bs-massage-evt-1">
+  <meta property="og:description" content="t3b06-bs-massage-evt-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://balsan-body-care.namanavi.com/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="logo">발산<span>마사지</span></div>
+ <button class="hamburger-menu" onclick="document.querySelector('nav').classList.toggle('active')">☰</button>
+ <nav>
+ <a href="index.html">홈</a>
+ <a href="info.html" style="border-color:#f7e05e; color:#f7e05e;">정보</a>
+ <a href="event.html">이벤트</a>
+ <a href="reserve.html">예약</a>
+ 
+ </nav>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 35개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0213.html">발산 마사지 이벤트 활용한 마포 셔츠룸 리얼 후기 소셜 마케팅 가이드 전략</a>
+        <p class="post-item__summary">지역 상권의 마케팅 흐름을 이해하는 것은 성공적인 브랜드 운영의 핵심입니다. 발산 마사지 이벤트 같은 프로모션은 소비자 유입을 촉진하는 강력한 수단으로 활용됩니다. 이러한 흐름을 분석하여 보다 정밀</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0214.html">발산 마사지 이벤트로 보는 구글 신뢰 지수 모발이식 솔루션 가격 기준</a>
+        <p class="post-item__summary">성공적인 온라인 비즈니스를 위해 발산 마사지 이벤트와 같은 마케팅 요소를 적절히 배치하는 것은 필수적입니다. 하지만 플랫폼의 신뢰도를 결정짓는 알고리즘을 이해하지 못하면 노력은 허사가 됩니다. 검색</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0463.html">공덕 셔츠룸 추천정보, 발산 마사지 이벤트 예약 절차 실패 지점 분석</a>
+        <p class="post-item__summary">공덕 지역에서 셔츠룸을 찾으시는 분들이라면, 만족스러운 경험을 위해 예약 절차를 꼼꼼히 확인하는 것이 필수적입니다. 많은 분들이 놓치기 쉬운 예약 절차 상의 실패 지점을 미리 파악하고 대비한다면, </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0464.html">연남 유흥 추천정보, 발산 마사지 이벤트 위치 접근성 확인 체크리스트</a>
+        <p class="post-item__summary">연남 지역에서 즐길 거리를 찾고 계신가요? 발산 마사지 이벤트와 마찬가지로, 원하는 장소의 위치와 접근성을 확인하는 것은 즐거운 경험을 위한 첫걸음입니다. 이 글에서는 연남 유흥 정보를 찾을 때 반</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0465.html">발산 마사지 이벤트 활용법과 마곡 가라오케 추천정보 안내</a>
+        <p class="post-item__summary">업무를 마치고 피로를 풀기 위해 발산 마사지 이벤트 정보를 찾는 직장인들이 많습니다. 육체적인 긴장을 해소한 뒤 지인들과 모임을 이어가는 경우, 자연스럽게 마곡 지역의 유흥 시설을 탐색하게 됩니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0466.html">발산 마사지 이벤트 오해와 마곡 유흥 추천정보 확인하기</a>
+        <p class="post-item__summary">흔히들 발산 마사지 이벤트 혜택을 받으면 시설의 질이 낮을 것이라는 오해를 하곤 합니다. 하지만 실제로는 체계적인 시스템을 갖춘 곳들이 고객 유치를 위해 적극적으로 프로모션을 진행하는 경우가 많습니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0467.html">발산 마사지 이벤트와 합정 노래방 추천정보 찾는 노하우</a>
+        <p class="post-item__summary">발산 마사지 이벤트 혜택을 챙기면서 합리적인 가격에 최상의 서비스를 받으려면 몇 가지 충족 조건을 따져봐야 합니다. 시설의 접근성부터 서비스의 종류까지 꼼꼼히 대조해보는 과정이 필수적입니다. 단순히</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0468.html">발산 마사지 이벤트 이후 가볼 만한 연남 클럽 추천정보</a>
+        <p class="post-item__summary">발산 마사지 이벤트 혜택을 누린 뒤 에너지를 더 끌어올리고 싶은 당신, 연남 지역의 역동적인 분위기를 원하시나요? 도심 속 휴식 뒤에 찾아오는 화려한 밤은 언제나 매력적인 선택지입니다. 하지만 그 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0469.html">발산 마사지 이벤트 활용 노하우와 합정 셔츠룸 추천정보 탐색법</a>
+        <p class="post-item__summary">일상의 피로를 풀기 위해 발산 마사지 이벤트 정보를 찾다 보면, 종종 새로운 유흥 문화에 대한 호기심이 생기기 마련입니다. 특히 합정 지역에서 프라이빗한 시간을 보내고자 할 때 신뢰할 수 있는 업체</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0470.html">발산 마사지 이벤트 비교와 공덕 가라오케 추천정보 분석</a>
+        <p class="post-item__summary">발산 마사지 이벤트 정보를 찾는 분들은 평소 여가 시간을 활용한 스트레스 해소에 관심이 많습니다. 이와 유사하게 공덕 지역의 가라오케를 방문할 때도 여러 선택지를 놓고 고민하는 경우가 많습니다. 어</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0471.html">발산 마사지 이벤트 주의사항과 상수 마사지 추천정보 활용</a>
+        <p class="post-item__summary">많은 이들이 발산 마사지 이벤트 정보를 검색하며 힐링을 계획하지만, 막상 현장에 도착하면 당황스러운 상황을 겪기도 합니다. 특히 상수 지역에서 마사지 업소를 찾을 때 사전에 충분한 정보를 숙지하지 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0472.html">발산 마사지 이벤트와 망원 노래방 추천정보 확인 체크리스트</a>
+        <p class="post-item__summary">평소 발산 마사지 이벤트 정보를 찾아 즐겨 찾던 분들이라면 망원 지역의 유흥 시설에 대해서도 관심을 갖기 마련입니다. 특히 친구들과 모임을 하거나 여가 시간을 보내기 위해 망원 노래방을 찾을 때, </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0473.html">발산 마사지 이벤트 활용한 홍대 노래방 추천정보 확인하기</a>
+        <p class="post-item__summary">피로를 풀기 위해 발산 마사지 이벤트 정보를 찾아보던 중 우연히 홍대 인근의 즐길 거리를 함께 검색하는 경우가 많습니다. 주말 저녁 홍대의 번화가는 활기가 넘치지만, 막상 적절한 장소를 찾으려 하면</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-002-lx6mh6.html">마사지 해결 방법 총정리</a>
+        <p class="post-item__summary">일상에서 쌓인 피로와 스트레스를 해소하기 위해 마사지를 찾는 사람들이 늘고 있습니다. 특히 발산 지역에서 마사지를 고려하고 있다면 효과를 높이는 방법을 아는 것이 중요합니다. 단순히 몸을 맡기는 것</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-001-1uor6om.html">발산 마사지 이벤트 솔직 후기</a>
+        <p class="post-item__summary">관점: 현장에서 관찰한 작은 단서로 큰 차이를 설명 구조: myth-counterexample — 통념과 반례를 교차 검증 근거 방식: 잘못된 선택의 신호와 중단 기준을 포함</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
