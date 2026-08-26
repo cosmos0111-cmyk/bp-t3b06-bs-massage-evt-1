@@ -16,17 +16,62 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://balsan-body-care.namanavi.com/posts/field_note-001-lx6mh6.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://balsan-body-care.namanavi.com/posts/field_note-002-1uor6om.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260705-607.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260721-0205.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260721-0206.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260721-0207.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260721-0212.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260722-0463.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260722-0464.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://balsan-body-care.namanavi.com/posts/guide-002-lx6mh6.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://balsan-body-care.namanavi.com/posts/review-001-1uor6om.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://balsan-body-care.namanavi.com/posts.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://balsan-body-care.namanavi.com/posts/field_note-001-lx6mh6.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -76,21 +121,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260721-0205.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260721-0206.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260721-0207.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260721-0208.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -111,27 +141,12 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260721-0212.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260721-0213.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260721-0214.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260722-0463.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260722-0464.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -177,26 +192,6 @@
   </url>
   <url>
     <loc>https://balsan-body-care.namanavi.com/posts/gemini-coverage-20260722-0473.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://balsan-body-care.namanavi.com/posts/guide-002-lx6mh6.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://balsan-body-care.namanavi.com/posts/review-001-1uor6om.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://balsan-body-care.namanavi.com/posts.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://balsan-body-care.namanavi.com/posts-2.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
